@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+   
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
     <style>
-           * {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -33,57 +37,69 @@
             position: relative;
 
         }
-        .common{
+
+        .common {
             position: absolute;
             font-size: 2vw;
             color: white;
         }
-       
-        #id1{
+
+        #id1 {
             left: 70%;
             top: 10%;
         }
-        #id2{
+
+        #id2 {
             left: 85%;
             top: 25%;
         }
-        #id3{
+
+        #id3 {
             left: 90%;
             top: 47%;
         }
-      #id4{
-        left: 84%;
-        top: 68%;
-      }
-      #id5{
-        left:68.8%;
-        top:83%;
-      }
-      #id6{
-          top: 90%;
-          left: 47%;
-      }
-      #id7{
-        top:83%;
-        left: 25%;
-      }
-      #id8{
-        top: 68%;
-        left:8%
-      }
-      #id9{
-        top: 47%;
-        left:5%
-      }
-      #id10{
-        top: 25%;
-        left: 11%;
-      }
-      #id11{
-        top: 10%;
-        left:25%;
-      }
-      #id12{
+
+        #id4 {
+            left: 84%;
+            top: 68%;
+        }
+
+        #id5 {
+            left: 68.8%;
+            top: 83%;
+        }
+
+        #id6 {
+            top: 90%;
+            left: 47%;
+        }
+
+        #id7 {
+            top: 83%;
+            left: 25%;
+        }
+
+        #id8 {
+            top: 68%;
+            left: 8%
+        }
+
+        #id9 {
+            top: 47%;
+            left: 5%
+        }
+
+        #id10 {
+            top: 25%;
+            left: 11%;
+        }
+
+        #id11 {
+            top: 10%;
+            left: 25%;
+        }
+
+        #id12 {
             left: 47%;
             top: 4.5%;
         }
@@ -91,110 +107,212 @@
 
 
 
-        .clock::after{
+        .clock::after {
             content: "";
             width: 2vw;
             height: 2vw;
             background-color: #b6a9a9;
             position: absolute;
             left: 50%;
-            top:50%;
-            transform: translate(-50%,-50%);
+            top: 50%;
+            transform: translate(-50%, -50%);
             border-radius: 50%;
         }
 
-        #second{
+        #second {
             left: 50%;
-            top:50%;
+            top: 50%;
             height: 14vw;
             width: .15vw;
             background-color: red;
             position: absolute;
-            transform-origin:top;
-            transform :rotate(180deg);
-           
-           
+            transform-origin: top;
+            transform: rotate(180deg);
+
+
         }
 
-        #minute{
+        #minute {
             left: 50%;
-            top:50%;
+            top: 50%;
             height: 12.5vw;
             width: .2vw;
-            background-color:white;
+            background-color: white;
             position: absolute;
-            transform-origin:top;
-            transform :rotate(180deg);
+            transform-origin: top;
+            transform: rotate(180deg);
         }
 
-        #hour{
-         
+        #hour {
+
             left: 49.8%;
-            top:50%;
+            top: 50%;
             height: 11vw;
             width: .35vw;
-            background-color:white;
+            background-color: white;
             position: absolute;
-            transform-origin:top;
-            transform :rotate(180deg);
-            
+            transform-origin: top;
+            transform: rotate(180deg);
+
         }
 
-        #diclock{
+        #diclock {
             position: absolute;
             left: 38.6%;
             top: 20%;
             font-size: 2.6vw;
-            color:red;
+            color: red;
         }
 
+
+        .checkbox {
+            opacity: 0;
+            position: absolute;
+        }
+
+        .label {
+            background-color: #111;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+            position: relative;
+            height: 26px;
+            width: 50px;
+            transform: scale(1.5);
+        }
+
+        .label .ball {
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            height: 22px;
+            width: 22px;
+            transform: translateX(0px);
+            transition: transform 0.2s linear;
+        }
+
+        .checkbox:checked+.label .ball {
+            transform: translateX(24px);
+        }
+
+
+        .fa-moon {
+            color: #f1c40f ;
+           
+        }
+
+        .fa-sun {
+            color: #f39c12 ;
+           
+        }
+
+        .white {
+            background-color: rgb(214, 214, 214);
+
+        }
+
+        .hour {
+            background-color: black !important;
+        }
+
+        .minute {
+            background-color: black !important;
+        }
+
+        .fcolor {
+            color: black !important;
+        }
+
+        .main1 {
+            box-shadow: 5px 5px 10px#b6a9a9, -5px -5px 10px#b6a9a9 !important;
+        }
+
+        .btn {
+            left: 70%;
+            top: 10%;
+            position: absolute;
+        }
     </style>
 </head>
+
 <body>
+
+    <div class="btn">
+        <input type="checkbox" class="checkbox" id="chk" />
+        <label class="label" for="chk">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+            <div class="ball"></div>
+        </label>
+    </div>
+
 
     <div class="main">
         <div id="diclock"></div>
         <div class="clock">
-                <span class="common" id="id1">I</span>
-                <span class="common" id="id2">II</span>
-                <span class="common" id="id3">III</span>
-                <span class="common" id="id4">IV</span>
-                <span class="common" id="id5">V</span>
-                <span class="common" id="id6">VI</span>
-                <span class="common" id="id7">VII</span>
-                <span class="common" id="id8">VIII</span>
-                <span class="common" id="id9">IX</span>
-                <span class="common" id="id10">X</span>
-                <span class="common" id="id11">XI</span>
-                <span class="common" id="id12">XII</span>
-          
+            <span class="common" id="id1">I</span>
+            <span class="common" id="id2">II</span>
+            <span class="common" id="id3">III</span>
+            <span class="common" id="id4">IV</span>
+            <span class="common" id="id5">V</span>
+            <span class="common" id="id6">VI</span>
+            <span class="common" id="id7">VII</span>
+            <span class="common" id="id8">VIII</span>
+            <span class="common" id="id9">IX</span>
+            <span class="common" id="id10">X</span>
+            <span class="common" id="id11">XI</span>
+            <span class="common" id="id12">XII</span>
 
             <div id="hour"></div>
             <div id="minute"></div>
             <div id="second"></div>
         </div>
     </div>
-    
+
 </body>
 
 <script>
-    function myclock(){
-        obj=new Date();
-        sec=obj.getSeconds();
-        min=obj.getMinutes();
-        hour=obj.getHours();
+    function myclock() {
+        obj = new Date();
+        sec = obj.getSeconds();
+        min = obj.getMinutes();
+        hour = obj.getHours();
 
-        sec1 = ((sec + obj.getMilliseconds()/1000)*6)+180;
-        min1=(min+sec/60)*6+180;
-        hour1=(hour+min/60)*30+180;
-        document.getElementById("second").style.transform=`rotate(${sec1}deg)`
-        document.getElementById("minute").style.transform=`rotate(${min1}deg)`
-        document.getElementById("hour").style.transform=`rotate(${hour1}deg)`
-     
-         arr=Date().split(" ");
-        document.getElementById("diclock").innerText=arr[4];
+        sec1 = ((sec + obj.getMilliseconds() / 1000) * 6) + 180;
+        min1 = (min + sec / 60) * 6 + 180;
+        hour1 = (hour + min / 60) * 30 + 180;
+        document.getElementById("second").style.transform = `rotate(${sec1}deg)`
+        document.getElementById("minute").style.transform = `rotate(${min1}deg)`
+        document.getElementById("hour").style.transform = `rotate(${hour1}deg)`
+
+        arr = Date().split(" ");
+        document.getElementById("diclock").innerText = arr[4];
     }
-    setInterval(myclock,1);
+    setInterval(myclock, 1);
+
+
+
+    const chk = document.getElementById('chk');
+
+    chk.addEventListener('change', () => {
+        document.body.classList.toggle('white');
+        document.getElementById("hour").classList.toggle('hour');
+        document.getElementById("minute").classList.toggle('minute');
+        document.getElementsByClassName("main")[0].classList.toggle('main1');
+        var x6 = document.querySelectorAll(".common");
+        let l = x6.length;
+        for (var j = 0; j < l; j++) {
+            x6[j].classList.toggle('fcolor');
+        }
+
+    });
+
 
 </script>
+
 </html>
